@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listaClienteFragment">
+    <fragment
+        android:id="@+id/listaClienteFragment"
+        android:name="com.duramas.prueba_oriontek_android.ui.cliente.ListaClienteFragment"
+        android:label="@string/lista_cliente"
+        tools:layout="@layout/lista_cliente_fragment">
+        <action
+            android:id="@+id/action_listaClienteFragment_to_registroClienteFragment"
+            app:destination="@id/registroClienteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registroClienteFragment"
+        android:name="com.duramas.prueba_oriontek_android.ui.cliente.RegistroClienteFragment"
+        android:label="@string/registro_cliente"
+        tools:layout="@layout/registro_cliente_fragment">
+        <action
+            android:id="@+id/action_registroClienteFragment_to_listaClienteFragment"
+            app:destination="@id/listaClienteFragment" />
+    </fragment>
+</navigation>
