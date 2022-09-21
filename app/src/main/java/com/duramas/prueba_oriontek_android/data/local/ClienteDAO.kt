@@ -24,5 +24,5 @@ interface ClienteDAO {
     suspend fun getClientes(): List<Cliente>
 
     @Query("Select * from Direccion where ClienteId = :clienteId ")
-    fun getDireccioneClientes(clienteId: Int): List<Direccion>
+    suspend fun getDireccioneClientes(clienteId: Int): List<Direccion>
 }

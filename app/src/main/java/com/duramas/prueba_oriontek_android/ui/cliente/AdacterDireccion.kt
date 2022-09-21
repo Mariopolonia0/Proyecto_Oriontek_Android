@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.duramas.prueba_oriontek_android.databinding.RowDireccionBinding
 import com.duramas.prueba_oriontek_android.models.Direccion
 
+//ADACTADOR PARA PRESENTAR LAS DIRECCIONES DE LOS CLIENTES
 class AdacterDireccion(): RecyclerView.Adapter<AdacterDireccion.RowDireccionViewHolder>()  {
 
     private var direccionList = emptyList<Direccion>()
@@ -36,7 +37,7 @@ class AdacterDireccion(): RecyclerView.Adapter<AdacterDireccion.RowDireccionView
             binding.textViewCuidad.text = item.Ciudad
             binding.textViewSector.text = item.Sector
             binding.textViewCalle.text = item.Calle
-            binding.textViewNumeroCasa.text = item.NumeroCasa.toString()
+            binding.textViewNumeroCasa.text = item.NumeroCasa
         }
     }
 }

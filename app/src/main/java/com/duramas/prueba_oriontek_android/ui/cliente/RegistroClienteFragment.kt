@@ -33,7 +33,20 @@ class RegistroClienteFragment : Fragment() {
             FechaNacimientoFragment(this).show(requireActivity().supportFragmentManager,"MY_BOTTOM_SHEET")
         })
 
+        LlenarVista()
+
         return binding.root
+    }
+    //SE CARGAN TODOS LOS DATO QUE SE RECIBE DEL CLIENTE CUANDO SE SELECIONA UN CLIENTE
+    private fun LlenarVista(){
+        viewModel.clienteId = arguments?.getInt("clienteId")!!
+        viewModel.GetDireccion()
+        binding.nombreTextEdit.setText(arguments?.getString("Nombre")!!)
+        binding.ApellidoTextEdit.setText(arguments?.getString("Apellido")!!)
+        binding.fechaNacimientoEditText.setText(arguments?.getString("FechaNacimiento")!!)
+        binding.numeroTelefonoEditText.setText(arguments?.getString("numeroTelefono")!!)
+        binding.nacionalidadEditText.setText(arguments?.getString("nacionalidad")!!)
+        CargarListaDireccione()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -69,6 +82,10 @@ class RegistroClienteFragment : Fragment() {
     fun AddDireccion(direccion: Direccion){
         viewModel.listaDirecciones.add(direccion)
         //actualizar lista de direcciones
+        CargarListaDireccione()
+    }
+    //llenar el reclecyview
+    fun CargarListaDireccione(){
         binding.recyclerView.adapter = AdacterDireccion()
         val adapter = binding.recyclerView.adapter as AdacterDireccion
         adapter.submitList(viewModel.listaDirecciones)

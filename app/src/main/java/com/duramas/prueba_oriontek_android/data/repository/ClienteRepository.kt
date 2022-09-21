@@ -20,6 +20,15 @@ class ClienteRepository @Inject constructor(
     suspend fun insertarDireccionesCliente(direcciones: List<Direccion>) =
         clienteDAO.insertarDirecciones(direcciones)
 
+    suspend fun GetDirecciones(clienteId: Int): List<Direccion> {
+        try {
+            return clienteDAO.getDireccioneClientes(clienteId)
+        } catch (exception: Exception) {
+            Log.e("GetDirecciones", exception.toString())
+        }
+        return ArrayList<Direccion>()
+    }
+
     suspend fun getClientes():Flow<List<Cliente>> = flow {
         try {
             emit(clienteDAO.getClientes())

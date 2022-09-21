@@ -33,8 +33,6 @@ class ListaClienteFragment : Fragment() {
             binding.clientesRecyclerView.adapter = adapter
         })
 
-
-
         binding.floatingActionButtonAgregarCliente.setOnClickListener({
             findNavController().navigate(R.id.action_listaClienteFragment_to_registroClienteFragment)
         })

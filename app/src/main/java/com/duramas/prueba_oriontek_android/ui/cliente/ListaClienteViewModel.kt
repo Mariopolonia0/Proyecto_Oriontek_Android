@@ -25,7 +25,7 @@ class ListaClienteViewModel @Inject constructor(
         getList()
     }
 
-    fun getList() = viewModelScope.launch {
+    fun getList() = viewModelScope.launch  {
         repository.getClientes().onEach {
             _clientes.value = it
         }.launchIn(viewModelScope)
