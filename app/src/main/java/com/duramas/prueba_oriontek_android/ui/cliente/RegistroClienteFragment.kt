@@ -1,14 +1,15 @@
 package com.duramas.prueba_oriontek_android.ui.cliente
 
-
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.duramas.prueba_oriontek_android.R
 import com.duramas.prueba_oriontek_android.databinding.RegistroClienteFragmentBinding
+import com.duramas.prueba_oriontek_android.models.Cliente
 import com.duramas.prueba_oriontek_android.models.Direccion
 import com.duramas.prueba_oriontek_android.ui.direccion.AgregarDireccion
+import com.duramas.prueba_oriontek_android.ui.fecha.FechaNacimientoFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,6 +29,10 @@ class RegistroClienteFragment : Fragment() {
             AgregarDireccion(this).show(requireActivity().supportFragmentManager,"MY_BOTTOM_SHEET")
         })
 
+        binding.floatingActionButtonAgregarFechaNacimientoRegistro.setOnClickListener({
+            FechaNacimientoFragment(this).show(requireActivity().supportFragmentManager,"MY_BOTTOM_SHEET")
+        })
+
         return binding.root
     }
 
@@ -39,10 +44,26 @@ class RegistroClienteFragment : Fragment() {
         // Handle item selection
         return when (item.itemId) {
             R.id.guardar-> {
+                Guardar()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun Guardar(){
+        viewModel.Guardar(GetCliente())
+    }
+
+    private fun GetCliente(): Cliente{
+        return Cliente(
+            0,
+            binding.nombreTextEdit.text.toString(),
+            binding.ApellidoTextEdit.text.toString(),
+            binding.fechaNacimientoEditText.text.toString(),
+            binding.numeroTelefonoEditText.text.toString(),
+            binding.nacionalidadEditText.text.toString()
+        )
     }
 
     fun AddDireccion(direccion: Direccion){
@@ -51,6 +72,10 @@ class RegistroClienteFragment : Fragment() {
         binding.recyclerView.adapter = AdacterDireccion()
         val adapter = binding.recyclerView.adapter as AdacterDireccion
         adapter.submitList(viewModel.listaDirecciones)
+    }
+
+    fun AddFechaNacimiento(fecha: String){
+        binding.fechaNacimientoEditText.setText(fecha)
     }
 
 }

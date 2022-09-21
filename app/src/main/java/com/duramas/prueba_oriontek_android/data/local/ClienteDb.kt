@@ -7,9 +7,9 @@ import com.duramas.prueba_oriontek_android.models.Direccion
 
 
 @Database(
-    version = 1,
+    version = 2,
     entities = arrayOf(Cliente::class,Direccion::class),
-    exportSchema = false
+    exportSchema = true
 )
 abstract class ClienteDb: RoomDatabase() {
 

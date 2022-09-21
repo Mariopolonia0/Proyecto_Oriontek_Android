@@ -1,18 +1,12 @@
 <resources>
     <string name="app_name">Oriontek Android</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
     <string name="lista_cliente">Lista De Cliente</string>
     <string name="registro_cliente">Registro Cliente</string>
 
     <string name="nombre_registro">Nombre</string>
     <string name="apellido_registro">Apellido</string>
-    <string name="fecha_nacimiento_registro">Fecha Nacimiento</string>
+    <string name="fecha_nacimiento_registro">Agregar Fecha Nacimiento</string>
     <string name="numero_telefono_registro">Numero Telefono</string>
     <string name="nacionalidad_registro">Nacionalidad</string>
     <string name="agregar_direccion">Agregar dirección</string>
@@ -28,6 +22,10 @@
 
     <string name="estado_defaut">Republica Dominicana</string>
     <string name="error_dato_vacio">error hay dato vacio</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lista_direccion">Lista De Direcciones</string>
+
 
 
 </resources>

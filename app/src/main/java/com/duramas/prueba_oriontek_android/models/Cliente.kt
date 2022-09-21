@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Cliente(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
     var ClienteId: Int,
     var Nombre: String,
     var Apellido: String,
