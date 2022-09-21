@@ -9,4 +9,25 @@
 
     <string name="lista_cliente">Lista De Cliente</string>
     <string name="registro_cliente">Registro Cliente</string>
+
+    <string name="nombre_registro">Nombre</string>
+    <string name="apellido_registro">Apellido</string>
+    <string name="fecha_nacimiento_registro">Fecha Nacimiento</string>
+    <string name="numero_telefono_registro">Numero Telefono</string>
+    <string name="nacionalidad_registro">Nacionalidad</string>
+    <string name="agregar_direccion">Agregar dirección</string>
+    <string name="calle_row_direccion">Calle</string>
+    <string name="numero_casa_row_direccion">#</string>
+
+    <string name="estado_direccion">Estado</string>
+    <string name="cuidad_direccion">Cuidad</string>
+    <string name="sector_direccion">Sector</string>
+    <string name="calle_direccion">Calle</string>
+    <string name="numero_casa_direccion"># Casa</string>
+    <string name="titulo_agregar_direccion">Agregar Dirección</string>
+
+    <string name="estado_defaut">Republica Dominicana</string>
+    <string name="error_dato_vacio">error hay dato vacio</string>
+
+
 </resources>
