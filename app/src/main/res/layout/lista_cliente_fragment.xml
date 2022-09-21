@@ -7,7 +7,7 @@
     tools:context=".ui.cliente.ListaClienteFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/clienteRecyclerView"
+        android:id="@+id/clientesRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"

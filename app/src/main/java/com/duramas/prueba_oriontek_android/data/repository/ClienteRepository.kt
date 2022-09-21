@@ -1,5 +1,7 @@
 package com.duramas.prueba_oriontek_android.data.repository
 
+import android.util.Log
+import androidx.lifecycle.LiveData
 import com.duramas.prueba_oriontek_android.data.local.ClienteDAO
 import com.duramas.prueba_oriontek_android.models.Cliente
 import com.duramas.prueba_oriontek_android.models.Direccion
@@ -20,10 +22,9 @@ class ClienteRepository @Inject constructor(
 
     suspend fun getClientes():Flow<List<Cliente>> = flow {
         try {
-            val clientes = clienteDAO.getClientes()
-            emit(clientes)
+            emit(clienteDAO.getClientes())
         }catch (exception:Exception){
-
+            Log.e("GetClientesRepository",exception.toString())
         }
     }
 }

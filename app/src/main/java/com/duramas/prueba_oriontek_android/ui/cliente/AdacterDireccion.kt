@@ -6,10 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.duramas.prueba_oriontek_android.databinding.RowDireccionBinding
 import com.duramas.prueba_oriontek_android.models.Direccion
 
-
 class AdacterDireccion(): RecyclerView.Adapter<AdacterDireccion.RowDireccionViewHolder>()  {
 
-    private var gobiernoList = emptyList<Direccion>()
+    private var direccionList = emptyList<Direccion>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowDireccionViewHolder {
         val binding = RowDireccionBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -18,15 +17,15 @@ class AdacterDireccion(): RecyclerView.Adapter<AdacterDireccion.RowDireccionView
     }
 
     override fun onBindViewHolder(holder: RowDireccionViewHolder, position: Int) {
-        holder.bind(gobiernoList[position])
+        holder.bind(direccionList[position])
     }
 
     override fun getItemCount(): Int {
-        return gobiernoList.size
+        return direccionList.size
     }
 
     fun submitList(list :List<Direccion>){
-        gobiernoList = list
+        direccionList = list
         notifyDataSetChanged()
     }
 

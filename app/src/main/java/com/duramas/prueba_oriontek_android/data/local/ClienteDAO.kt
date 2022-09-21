@@ -1,5 +1,6 @@
 package com.duramas.prueba_oriontek_android.data.local
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -23,5 +24,5 @@ interface ClienteDAO {
     suspend fun getClientes(): List<Cliente>
 
     @Query("Select * from Direccion where ClienteId = :clienteId ")
-    suspend fun getDireccioneClientes(clienteId: Int): List<Direccion>
+    fun getDireccioneClientes(clienteId: Int): List<Direccion>
 }
