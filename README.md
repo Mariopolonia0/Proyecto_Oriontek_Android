@@ -7,10 +7,7 @@ donde cada cliente puede tener N cantidad de direcciones.
 ~~~
 
 ~~~
-Lista De Cliente
+Lista De Cliente y Regsitro De Cliente
 ~~~
-![listaCliente](https://user-images.githubusercontent.com/65502311/191651537-3b565cb7-38f1-4278-989a-fe3434ebd0b3.PNG)
-~~~
-Regsitro De Cliente
-~~~
-![registroCliente](https://user-images.githubusercontent.com/65502311/191651546-03e0d233-19c4-41f1-80c6-56db458c71e0.PNG)
+
+![listaCliente](https://user-images.githubusercontent.com/65502311/191651796-3e79ac48-2a18-45c0-b537-aeefa84fe4e6.PNG)
