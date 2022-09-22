@@ -1,7 +1,7 @@
 # Proyecto_Oriontek_Android
 Proyecto de entrevista de trabajo para Oriontek de vacante en Android 
 ~~~
-El requerimiento es el siguiente
+El requerimiento es el siguiente.
 Se desea tener el control de todos los clientes pertenecientes a la empresa X,
 donde cada cliente puede tener N cantidad de direcciones. 
 ~~~
