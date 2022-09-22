@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.duramas.prueba_oriontek_android.data.repository.ClienteRepository
 import com.duramas.prueba_oriontek_android.models.Cliente
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -18,17 +19,9 @@ class ListaClienteViewModel @Inject constructor(
     private val repository: ClienteRepository
 ) : ViewModel() {
 
-    private val _clientes = MutableLiveData<List<Cliente>>()
-    val clientes: LiveData<List<Cliente>> get() = _clientes
+    val listaCliente = repository.getClientes()
 
-    init {
-        getList()
+    fun deleteCliente(cliente: Cliente) = viewModelScope.launch(Dispatchers.IO) {
+        repository.deleteClientes(cliente)
     }
-
-    fun getList() = viewModelScope.launch  {
-        repository.getClientes().onEach {
-            _clientes.value = it
-        }.launchIn(viewModelScope)
-    }
-
 }

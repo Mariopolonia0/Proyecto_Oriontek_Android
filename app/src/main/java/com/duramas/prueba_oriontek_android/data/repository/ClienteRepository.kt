@@ -12,8 +12,11 @@ import javax.inject.Inject
 class ClienteRepository @Inject constructor(
     private val clienteDAO: ClienteDAO
 ) {
-    suspend fun insertarCliente(cliente: Cliente) =
-        clienteDAO.insertarCliente(cliente)
+    fun getClientes(): LiveData<List<Cliente>> = clienteDAO.getClientes()
+
+    suspend fun deleteClientes(cliente: Cliente) = clienteDAO.eliminarCliente(cliente)
+
+    suspend fun insertarCliente(cliente: Cliente) = clienteDAO.insertarCliente(cliente)
 
     suspend fun octenerUltimoRegistroCliente(): Int = clienteDAO.getultimoCliente()
 
@@ -27,13 +30,5 @@ class ClienteRepository @Inject constructor(
             Log.e("GetDirecciones", exception.toString())
         }
         return ArrayList<Direccion>()
-    }
-
-    suspend fun getClientes():Flow<List<Cliente>> = flow {
-        try {
-            emit(clienteDAO.getClientes())
-        }catch (exception:Exception){
-            Log.e("GetClientesRepository",exception.toString())
-        }
     }
 }

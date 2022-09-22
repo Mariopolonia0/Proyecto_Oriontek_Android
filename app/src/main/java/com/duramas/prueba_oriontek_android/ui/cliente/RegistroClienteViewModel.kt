@@ -25,8 +25,9 @@ class RegistroClienteViewModel @Inject constructor(
 
     fun Guardar(cliente: Cliente) = viewModelScope.launch {
         repository.insertarCliente(cliente)
-        clienteId = repository.octenerUltimoRegistroCliente()
-        listaDirecciones.map { it.ClienteId = clienteId }
+        if (cliente.ClienteId == 0)
+            cliente.ClienteId = repository.octenerUltimoRegistroCliente()
+        listaDirecciones.map { it.ClienteId = cliente.ClienteId }
         repository.insertarDireccionesCliente(listaDirecciones)
     }
 
@@ -34,8 +35,6 @@ class RegistroClienteViewModel @Inject constructor(
 
         for (direccion in repository.GetDirecciones(clienteId)) {
             listaDirecciones.add(direccion)
-            Log.e(clienteId.toString(), direccion.Ciudad)
         }
     }
-
 }

@@ -1,17 +1,22 @@
 package com.duramas.prueba_oriontek_android.ui.cliente
 
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.duramas.prueba_oriontek_android.R
+import com.duramas.prueba_oriontek_android.data.repository.ClienteRepository
 import com.duramas.prueba_oriontek_android.databinding.RowClienteBinding
 import com.duramas.prueba_oriontek_android.models.Cliente
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 //ADACTADOR PARA PRESENTAR LOS CLIENTE EN LA LISTA DE CLIENTE
-class AdacterCliente() : RecyclerView.Adapter<AdacterCliente.RowClienteViewHolder>() {
+//le pado el fragmento para usar la funcion eliminar del fragmento
+class AdacterCliente (
+    val fragment: ListaClienteFragment
+): RecyclerView.Adapter<AdacterCliente.RowClienteViewHolder>() {
 
     private var clienteList = emptyList<Cliente>()
 
@@ -51,8 +56,13 @@ class AdacterCliente() : RecyclerView.Adapter<AdacterCliente.RowClienteViewHolde
                     "numeroTelefono" to item.numeroTelefono,
                     "nacionalidad" to item.nacionalidad
                 )
+
                 binding.root.findNavController()
                     .navigate(R.id.action_listaClienteFragment_to_registroClienteFragment, bundle)
+            })
+
+            binding.floatingActionButtonEliminarCliente.setOnClickListener({
+                fragment.EliminarCliente(item)
             })
         }
     }

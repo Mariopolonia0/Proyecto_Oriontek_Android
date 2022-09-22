@@ -1,10 +1,7 @@
 package com.duramas.prueba_oriontek_android.data.local
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.duramas.prueba_oriontek_android.models.Cliente
 import com.duramas.prueba_oriontek_android.models.Direccion
 
@@ -21,8 +18,12 @@ interface ClienteDAO {
     suspend fun getultimoCliente(): Int
 
     @Query("Select * from Cliente")
-    suspend fun getClientes(): List<Cliente>
+    fun getClientes(): LiveData<List<Cliente>>
 
     @Query("Select * from Direccion where ClienteId = :clienteId ")
     suspend fun getDireccioneClientes(clienteId: Int): List<Direccion>
+
+    @Delete
+    suspend fun eliminarCliente(cliente: Cliente)
+
 }
