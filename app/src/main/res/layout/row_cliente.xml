@@ -13,6 +13,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +32,7 @@
                 android:layout_marginTop="4dp"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/floatingActionButtonEliminarCliente"
                 tools:ignore="TextContrastCheck,TextContrastCheck"
                 tools:text="Mario" />
 
@@ -39,7 +40,7 @@
                 android:id="@+id/textViewApellido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="4dp"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewNombre"
                 app:layout_constraintStart_toEndOf="@+id/textViewNombre"
@@ -52,9 +53,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:layout_marginBottom="4dp"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/floatingActionButtonEliminarCliente"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewNombre"
                 tools:text="829-798-5826" />

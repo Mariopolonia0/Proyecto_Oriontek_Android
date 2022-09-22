@@ -46,7 +46,7 @@ class RegistroClienteFragment : Fragment() {
         try {
             if (!Validar())
                 return
-            viewModel.Guardar(GetCliente())
+            viewModel.Guardar(GetCliente(),viewModel.listaDirecciones)
             LimpiarVista()
             Snackbar.make(binding.root, "Cliente Guardado", Snackbar.LENGTH_LONG).show()
         } catch (exeption: Exception) {

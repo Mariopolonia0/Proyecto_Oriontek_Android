@@ -23,12 +23,12 @@ class RegistroClienteViewModel @Inject constructor(
 
     var listaDirecciones = ArrayList<Direccion>()
 
-    fun Guardar(cliente: Cliente) = viewModelScope.launch {
+    fun Guardar(cliente: Cliente,list : ArrayList<Direccion>) = viewModelScope.launch(Dispatchers.IO){
         repository.insertarCliente(cliente)
         if (cliente.ClienteId == 0)
             cliente.ClienteId = repository.octenerUltimoRegistroCliente()
-        listaDirecciones.map { it.ClienteId = cliente.ClienteId }
-        repository.insertarDireccionesCliente(listaDirecciones)
+        list.map{ it.ClienteId = cliente.ClienteId }
+        repository.insertarDireccionesCliente(list)
     }
 
     fun GetDireccion() = viewModelScope.launch(Dispatchers.IO) {
