@@ -15,4 +15,4 @@ Lista De Cliente y Regsitro De Cliente
 ~~~
 Diagrama Entidad-Relacion
 ~~~
-![Diagrama en blanco](https://user-images.githubusercontent.com/65502311/191652645-279bf296-e763-4b85-bc1c-a5acbfaf6b7f.png)
+![Diagrama en blanco](https://user-images.githubusercontent.com/65502311/191652792-02e98b8f-daa6-401c-8e57-f3134096ff72.png)
