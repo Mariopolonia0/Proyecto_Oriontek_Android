@@ -61,7 +61,7 @@ class RegistroClienteFragment : Fragment() {
             viewModel.GetDireccion()
             binding.nombreTextEdit.setText(arguments?.getString("Nombre")!!)
             binding.ApellidoTextEdit.setText(arguments?.getString("Apellido")!!)
-            binding.fechaNacimientoEditText.setText(arguments?.getString("FechaNacimiento")!!)
+            binding.textViewFechaNacimiento.setText(arguments?.getString("FechaNacimiento")!!)
             binding.numeroTelefonoEditText.setText(arguments?.getString("numeroTelefono")!!)
             binding.nacionalidadEditText.setText(arguments?.getString("nacionalidad")!!)
             CargarListaDireccione()
@@ -71,7 +71,7 @@ class RegistroClienteFragment : Fragment() {
     private fun LimpiarVista() {
         binding.nombreTextEdit.setText("")
         binding.ApellidoTextEdit.setText("")
-        binding.fechaNacimientoEditText.setText("")
+        binding.textViewFechaNacimiento.setText("")
         binding.numeroTelefonoEditText.setText("")
         binding.nacionalidadEditText.setText("")
         viewModel.clienteId = 0
@@ -89,7 +89,7 @@ class RegistroClienteFragment : Fragment() {
             Snackbar.make(binding.root, R.string.error_dato_vacio, Snackbar.LENGTH_LONG).show()
             return false
         }
-        if (binding.fechaNacimientoEditText.text.toString().length == 0) {
+        if (binding.textViewFechaNacimiento.text.toString().length == 0) {
             Snackbar.make(binding.root, R.string.error_dato_vacio, Snackbar.LENGTH_LONG).show()
             return false
         }
@@ -113,7 +113,7 @@ class RegistroClienteFragment : Fragment() {
             viewModel.clienteId,
             binding.nombreTextEdit.text.toString(),
             binding.ApellidoTextEdit.text.toString(),
-            binding.fechaNacimientoEditText.text.toString(),
+            binding.textViewFechaNacimiento.text.toString(),
             binding.numeroTelefonoEditText.text.toString(),
             binding.nacionalidadEditText.text.toString()
         )
@@ -127,7 +127,7 @@ class RegistroClienteFragment : Fragment() {
     }
 
     fun AddFechaNacimiento(fecha: String) {
-        binding.fechaNacimientoEditText.setText(fecha)
+        binding.textViewFechaNacimiento.setText(fecha)
     }
 
     fun AddDireccion(direccion: Direccion) {

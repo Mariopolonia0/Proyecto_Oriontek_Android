@@ -6,10 +6,10 @@
 
     <string name="nombre_registro">Nombre</string>
     <string name="apellido_registro">Apellido</string>
-    <string name="fecha_nacimiento_registro">Agregar Fecha Nacimiento</string>
+    <string name="fecha_nacimiento_registro">Fecha Nacimiento</string>
     <string name="numero_telefono_registro">Numero Telefono</string>
     <string name="nacionalidad_registro">Nacionalidad</string>
-    <string name="agregar_direccion">Agregar dirección</string>
+    <string name="agregar_direccion">Direcciónes</string>
     <string name="calle_row_direccion">Calle</string>
     <string name="numero_casa_row_direccion">#</string>
 
