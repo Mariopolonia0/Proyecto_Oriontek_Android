@@ -43,16 +43,16 @@ class AdacterCliente (
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Cliente) {
-            binding.textViewNombre.text = item.Nombre
-            binding.textViewApellido.text = item.Apellido
+            binding.textViewNombre.text = item.nombre
+            binding.textViewApellido.text = item.apellido
             binding.textViewTelefono.text = item.numeroTelefono
 
             binding.cardView.setOnClickListener({
                 val bundle = bundleOf(
-                    "clienteId" to item.ClienteId,
-                    "Nombre" to item.Nombre,
-                    "Apellido" to item.Apellido,
-                    "FechaNacimiento" to item.FechaNacimiento,
+                    "clienteId" to item.clienteId,
+                    "Nombre" to item.nombre,
+                    "Apellido" to item.apellido,
+                    "FechaNacimiento" to item.fechaNacimiento,
                     "numeroTelefono" to item.numeroTelefono,
                     "nacionalidad" to item.nacionalidad
                 )
@@ -61,9 +61,9 @@ class AdacterCliente (
                     .navigate(R.id.action_listaClienteFragment_to_registroClienteFragment, bundle)
             })
 
-            binding.floatingActionButtonEliminarCliente.setOnClickListener({
-                fragment.EliminarCliente(item)
-            })
+//            binding.floatingActionButtonEliminarCliente.setOnClickListener({
+//                fragment.EliminarCliente(item)
+//            })
         }
     }
 }

@@ -34,10 +34,10 @@ class AdacterDireccion(): RecyclerView.Adapter<AdacterDireccion.RowDireccionView
         RecyclerView.ViewHolder(binding.root){
 
         fun bind(item:Direccion){
-            binding.textViewCuidad.text = item.Ciudad
-            binding.textViewSector.text = item.Sector
-            binding.textViewCalle.text = item.Calle
-            binding.textViewNumeroCasa.text = item.NumeroCasa
+            binding.textViewCuidad.text = item.ciudad
+            binding.textViewSector.text = item.sector
+            binding.textViewCalle.text = item.calle
+            binding.textViewNumeroCasa.text = item.numeroCasa
         }
     }
 }

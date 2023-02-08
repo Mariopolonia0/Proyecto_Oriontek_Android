@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:foregroundTint="#D10909">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -28,11 +29,11 @@
                 android:id="@+id/textViewNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/floatingActionButtonEliminarCliente"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TextContrastCheck,TextContrastCheck"
                 tools:text="Mario" />
 
@@ -52,29 +53,24 @@
                 android:id="@+id/textViewTelefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/floatingActionButtonEliminarCliente"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textViewNombre"
                 app:layout_constraintTop_toBottomOf="@+id/textViewNombre"
                 tools:text="829-798-5826" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButtonEliminarCliente"
+            <ImageButton
+                android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="4dp"
-                android:clickable="true"
-                android:tint="@color/blue_200"
-                app:backgroundTint="#FF5722"
+                android:layout_height="0dp"
+                android:layout_marginEnd="12dp"
+                android:backgroundTint="@color/blue_200"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/ic_delete"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                app:srcCompat="@drawable/ic_delete" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

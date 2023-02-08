@@ -6,11 +6,11 @@ import androidx.room.PrimaryKey
 @Entity
 data class Direccion(
     @PrimaryKey(autoGenerate = true)
-    var DireccionId : Int,
-    var ClienteId : Int,
-    var Estado : String,
-    var Ciudad : String,
-    var Sector : String,
-    var Calle: String,
-    var NumeroCasa : String
+    var direccionId : Int,
+    var clienteId : Int,
+    var estado : String,
+    var ciudad : String,
+    var sector : String,
+    var calle: String,
+    var numeroCasa : String
 )
