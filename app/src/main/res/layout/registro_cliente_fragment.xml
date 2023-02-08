@@ -71,8 +71,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/numero_telefono_registro"
                 android:inputType="number|phone"
-                android:singleLine="true"
-                android:maxLength="13" />
+                android:maxLength="13"
+                android:singleLine="true" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -154,7 +154,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="260dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="4dp"

@@ -37,10 +37,10 @@
                 android:id="@+id/textViewSector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="4dp"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewCuidad"
-                app:layout_constraintStart_toEndOf="@+id/textViewCuidad"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
                 app:layout_constraintTop_toTopOf="@+id/textViewCuidad"
                 tools:text="Ensache Olimpia" />
 
@@ -84,11 +84,29 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="4dp"
                 android:text="@string/numero_casa_row_direccion"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewCalle"
-                app:layout_constraintStart_toEndOf="@+id/textViewCalle" />
+                app:layout_constraintStart_toEndOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=","
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/textViewCuidad"
+                app:layout_constraintTop_toTopOf="@+id/textViewCuidad" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=","
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/textViewCalle"
+                app:layout_constraintTop_toTopOf="@+id/textViewCalle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

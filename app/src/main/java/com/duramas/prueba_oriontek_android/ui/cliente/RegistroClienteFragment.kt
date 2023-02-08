@@ -1,7 +1,9 @@
 package com.duramas.prueba_oriontek_android.ui.cliente
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.duramas.prueba_oriontek_android.R
@@ -37,6 +39,12 @@ class RegistroClienteFragment : Fragment() {
             )
         })
 
+        viewModel.listaDirecciones.observe(this.viewLifecycleOwner){
+            val adacterDireccion = AdacterDireccion()
+            adacterDireccion.submitList(it.toList())
+            binding.recyclerView.adapter = adacterDireccion
+        }
+
         LlenarVista()
 
         return binding.root
@@ -46,7 +54,7 @@ class RegistroClienteFragment : Fragment() {
         try {
             if (!Validar())
                 return
-            viewModel.Guardar(GetCliente(),viewModel.listaDirecciones)
+            viewModel.GuardarRemoto(GetCliente())
             LimpiarVista()
             Snackbar.make(binding.root, "Cliente Guardado", Snackbar.LENGTH_LONG).show()
         } catch (exeption: Exception) {
@@ -64,7 +72,7 @@ class RegistroClienteFragment : Fragment() {
             binding.textViewFechaNacimiento.setText(arguments?.getString("FechaNacimiento")!!)
             binding.numeroTelefonoEditText.setText(arguments?.getString("numeroTelefono")!!)
             binding.nacionalidadEditText.setText(arguments?.getString("nacionalidad")!!)
-            CargarListaDireccione()
+           // CargarListaDireccione()
         }
     }
 
@@ -75,7 +83,7 @@ class RegistroClienteFragment : Fragment() {
         binding.numeroTelefonoEditText.setText("")
         binding.nacionalidadEditText.setText("")
         viewModel.clienteId = 0
-        viewModel.listaDirecciones = ArrayList<Direccion>()
+        viewModel.listaDirecciones.value!!.clear()
         CargarListaDireccione()
     }
 
@@ -101,7 +109,7 @@ class RegistroClienteFragment : Fragment() {
             Snackbar.make(binding.root, R.string.error_dato_vacio, Snackbar.LENGTH_LONG).show()
             return false
         }
-        if (viewModel.listaDirecciones.count() == 0) {
+        if ( viewModel.listaDirecciones.value!!.count() == 0) {
             Snackbar.make(binding.root, R.string.error_dato_vacio, Snackbar.LENGTH_LONG).show()
             return false
         }
@@ -121,9 +129,9 @@ class RegistroClienteFragment : Fragment() {
 
     //llenar el reclecyview
     private fun CargarListaDireccione() {
-        binding.recyclerView.adapter = AdacterDireccion()
-        val adapter = binding.recyclerView.adapter as AdacterDireccion
-        adapter.submitList(viewModel.listaDirecciones)
+        val adacterDireccion = AdacterDireccion()
+        adacterDireccion.submitList(viewModel.listaDirecciones.value!!.toList())
+        binding.recyclerView.adapter = adacterDireccion
     }
 
     fun AddFechaNacimiento(fecha: String) {
@@ -131,9 +139,9 @@ class RegistroClienteFragment : Fragment() {
     }
 
     fun AddDireccion(direccion: Direccion) {
-        viewModel.listaDirecciones.add(direccion)
-        //actualizar lista de direcciones
+        viewModel.agregarDireccion(direccion)
         CargarListaDireccione()
+        //actualizar lista de direcciones
     }
 
     //agregar el boton a el menu

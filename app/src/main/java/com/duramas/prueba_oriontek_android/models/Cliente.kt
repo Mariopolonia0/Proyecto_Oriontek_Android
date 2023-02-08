@@ -6,10 +6,10 @@ import androidx.room.PrimaryKey
 @Entity
 data class Cliente(
     @PrimaryKey(autoGenerate = true)
-    var ClienteId: Int,
-    var Nombre: String,
-    var Apellido: String,
-    var FechaNacimiento: String,
+    var clienteId: Int,
+    var nombre: String,
+    var apellido: String,
+    var fechaNacimiento: String,
     var numeroTelefono: String,
     var nacionalidad: String
 )

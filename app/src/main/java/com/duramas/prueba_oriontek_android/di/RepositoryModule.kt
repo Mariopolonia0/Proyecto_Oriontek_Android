@@ -1,6 +1,7 @@
 package com.duramas.prueba_oriontek_android.di
 
 import com.duramas.prueba_oriontek_android.data.local.ClienteDAO
+import com.duramas.prueba_oriontek_android.data.remote.ClienteApi
 import com.duramas.prueba_oriontek_android.data.repository.ClienteRepository
 import dagger.Module
 import dagger.Provides
@@ -13,7 +14,10 @@ import javax.inject.Singleton
 object RepositoryModule {
     @Singleton
     @Provides
-    fun provideClienteRepository(clienteDAO: ClienteDAO): ClienteRepository {
-        return ClienteRepository(clienteDAO)
+    fun provideClienteRepository(
+        clienteApi: ClienteApi,
+        clienteDAO: ClienteDAO
+    ): ClienteRepository {
+        return ClienteRepository(clienteDAO, clienteApi)
     }
 }
